@@ -1,16 +1,16 @@
 
 １、ゲーム Window 作成
 
-#-- ここから
-# -*- coding: cp932 -*-
-
-require 'dxruby'
-
-# タイトルの指定
-# 指定しなければ "DXRuby Application" となる
-Window.caption = "TETRIS"
-
-#-- 実行してみる
+    #-- ここから
+    # -*- coding: cp932 -*-
+    
+    require 'dxruby'
+    
+    # タイトルの指定
+    # 指定しなければ "DXRuby Application" となる
+    Window.caption = "TETRIS"
+    
+    #-- 実行してみる
 
 # 設定を行わなければ画面サイズは 640 * 480 になる
 # 横幅指定
