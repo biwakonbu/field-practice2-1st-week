@@ -132,13 +132,13 @@ scene = "TITLE"
 
   Window.loop do の下に書く。
 
-#-- ここから
+```ruby
 if scene == "TITLE"
-#-- ここまで
+```
 
 　さらにSTART へ移動するコードの下に書く。
 
-#-- ここから
+```ruby
     # 選択肢処理
     if Input.keyPush? K_RETURN
 
@@ -156,24 +156,24 @@ if scene == "TITLE"
     end
   end
   # TITLE おわり
-#-- ここまで
+```
 
 ５、盤面の作成
 ・ゲームプレイ用のモードを作る
 　# TITLE おわり の下に書く。
 
-#-- 
+```ruby
   # TETRIS 開始
   if scene == "TETRIS"
 
   end
   # TETRIS 1 ゲーム分の処理ここまで
-#-- ここまで
+```
 
 ・ゲーム盤を作る。
   scene = "TITLE" の下に書く。
 
-#-- ここから
+```ruby
 
 BACKGROUND = Image.load "image/background.png"
 BLOCK = Image.load "image/block.png"
@@ -209,12 +209,12 @@ tetris_map = [
               [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
               [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
              ]
-#-- ここまで
+```
 
 　if scene == "TETRIS" の下に書く。
 
-#-- ここから
+```ruby
     map = Marshal.load(Marshal.dump(tetris_map))
     # ゲーム画面の作成
     Window.drawTile(0, 0, map, TETRIS_IMAGES, 0, 0, 14, 24)
-#-- ここまで
+```
