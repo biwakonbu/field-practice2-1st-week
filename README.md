@@ -4,32 +4,38 @@
 # -*- coding: cp932 -*-
 require 'dxruby'
 
+####### 以下設定用変数 #######
+
 # タイトルの指定
 # 指定しなければ "DXRuby Application" となる
 Window.caption = "TETRIS"
 ```
 
+
+```ruby
 # 設定を行わなければ画面サイズは 640 * 480 になる
 # 横幅指定
 Window.width = 480
 
 # 縦幅指定
 Window.height = 720
+```
+
+```ruby
+######### ここまで ##########
 
 Window.loop do
 
 
 end
 # ゲーム動作処理ここまで
-
-#-- ここまで
+```
 
 ２、タイトル画面の作成
 
-・Window.loop do の上に下記のコードを書く
+・設定用変数スペースの一番下に次のコードを書く
 
-#-- ここから
-
+```ruby
 # タイトル画像を title という変数に確保させる
 title = Image.load "image/title.png"
 
@@ -67,12 +73,11 @@ arrow = {
   "y" => START_POSITION["y"]
 }
 
-#-- ここまで
+```
 
 
-・Window.loop do の下に下記のコードを書く
-
-#-- ここから
+・設定用変数スペースの一番下に次のコードを書く
+```ruby
     # タイトル用の画像を描画 (横座標, 縦座標, 表示画像) <- の括弧内の順番で指定する
     Window.draw (480-300)/2, (320-100)/2, title
 
@@ -80,40 +85,40 @@ arrow = {
     Window.drawFont 380/2, 640/2, str_start, font_px
     Window.drawFont 380/2, (640/2)+60, str_exit, font_px
     Window.drawFont arrow["x"], arrow["y"], arrow["font"], font_px
-#-- ここまで
+```
 
 
 ３、カーソルキーの移動
 ・EXIT へ移動
 　上の続き、Window.drawFnt~ の下に下記のコードを書く。
 
-#-- ここから
+```ruby
     # ↓キーを押下すると EXIT を選択
     if Input.keyPush? K_DOWNARROW
       arrow["x"] = EXIT_POSITION["x"]
       arrow["y"] = EXIT_POSITION["y"]
     end
-# ここまで
+```
 
 ・START へ移動
 　EXIT へ移動のコードの下に書く。
 
-#-- ここから
+```ruby
     # ↑キーを押下すると START を選択
     if Input.keyPush? K_UPARROW
       arrow["x"] = START_POSITION["x"]
       arrow["y"] = START_POSITION["y"]
     end
-#-- ここまで
+```
 
 ・終了コマンドの作成
 　START へ移動で書いたコードの下に書く。
 
-#-- ここから
+```ruby
   if Input.keyPush? K_Q
     break
   end
-#-- ここまで
+```
 
 ４、メニューの選択
 ・メニューを選択できるようにする。
@@ -121,9 +126,9 @@ arrow = {
 
 Window.loop do の上に書く。
 
-#-- ここから
+```ruby
 scene = "TITLE"
-#-- ここまで
+```
 
   Window.loop do の下に書く。
 
